@@ -30,7 +30,7 @@ public class Main extends Frame {
         frame.setLayout(null);
 
 
-        //Ikonica za aplikaciju.
+        //Icon for the application.
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Image icon = toolkit.getImage("src//calculator_icon.png");
         frame.setIconImage(icon);
@@ -41,7 +41,7 @@ public class Main extends Frame {
         frame.add(tfr);
 
 
-        //Polja za prvi i drugi broj
+        //Text fields for the first and second number.
         TextField tf1 = new TextField();
         tf1.setBounds(150, 35, 100, 20);
         frame.add(tf1);
@@ -52,7 +52,7 @@ public class Main extends Frame {
         frame.add(tf2);
 
 
-        //Operacije
+        //Operations
         Choice operations = new Choice();
         operations.add("add");
         operations.add("subtract");
@@ -65,7 +65,7 @@ public class Main extends Frame {
         frame.add(operations);
 
 
-        //Dugme za izvrsenje operacije nad brojevima.
+        //Button for executing an operation on numbers.
         Button calculate = new Button();
         calculate.setLabel("Calculate");
         calculate.setSize(new Dimension(10, 10));
@@ -91,7 +91,6 @@ public class Main extends Frame {
                     result = num1 * num2;
                     tfr.setText(String.valueOf(result));
                 } else if (selectedItem.equals("divide")) {
-                    //Umesto int dodao sam double kako bi rezultat bio precizniji, i umesto try, catch-a dodao if naredbu za proveru nule.
                     double n1 = Double.parseDouble(tf1.getText());
                     double n2 = Double.parseDouble(tf2.getText());
                     double divisionResult = n1 / n2;
@@ -105,7 +104,6 @@ public class Main extends Frame {
         });
 
 
-        //Slusac za zatvaranje aplikacije klikom na dugme za izlaz.
         frame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
